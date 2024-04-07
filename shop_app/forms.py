@@ -24,5 +24,8 @@ class PurchaseForm(ModelForm):
 
     def clean(self):
         self.user = ShopUser.objects.get(username=self.cleaned_data['username'])
+        quantity = self.cleaned_data['quantity']
+        product = self.cleaned_data['product']
+
         
 

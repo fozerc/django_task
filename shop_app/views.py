@@ -76,6 +76,8 @@ class PurchasesCreateView(LoginRequiredMixin, CreateView):
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
         kwargs['user'] = self.request.user
+        kwargs['quantity'] = self.request.GET.get('quantity')
+        kwargs['product'] = self.request.GET.get('product')
         return kwargs
 
 
