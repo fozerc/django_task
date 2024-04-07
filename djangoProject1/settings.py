@@ -130,4 +130,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'shop_app.ShopUser'
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = ''

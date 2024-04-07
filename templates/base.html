@@ -9,10 +9,20 @@
 </head>
 <body>
     <div>
-        BASE!!!
+        <a href="{% url 'main' %}">Main Page</a>
     </div>
     {% block content %}
-    	
+        <div>
+            <form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit">Logout</button>
+            </form>
+        </div>
     {% endblock %}
+    {% if user.is_superuser %}
+        <a href="{% url 'add_product' %}">Add Product</a>
+        <a href="{% url 'check_returns' %}">Check all returns</a>
+        <a href="{% url 'products' %}">Check all products</a>
+    {% endif %}
 </body>
 </html>
